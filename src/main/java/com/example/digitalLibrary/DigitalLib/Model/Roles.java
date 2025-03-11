@@ -3,6 +3,8 @@ package com.example.digitalLibrary.DigitalLib.Model;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,6 +20,7 @@ public class Roles {
 	private String name;   //ADMIN CUSTOMER AUTHOR
 	
 	@ManyToMany(mappedBy = "roles")
+	@JsonIgnore
 	private Set<Users> users = new HashSet<>();
 
 	public int getId() {

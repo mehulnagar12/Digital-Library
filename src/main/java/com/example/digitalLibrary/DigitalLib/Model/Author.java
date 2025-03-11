@@ -2,6 +2,8 @@ package com.example.digitalLibrary.DigitalLib.Model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -15,7 +17,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class Author {
 	
-	Author() {
+	public Author() {
 		
 	}
 	
@@ -26,6 +28,7 @@ public class Author {
 	private String authorEmail;
 	
 	@OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+	@JsonIgnore
 	private List<Books> books;
 	
 	

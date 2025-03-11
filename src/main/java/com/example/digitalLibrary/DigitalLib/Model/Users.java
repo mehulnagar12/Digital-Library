@@ -16,7 +16,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class Users {
 	
-	Users(){
+	public Users(){
 		
 	}
 
